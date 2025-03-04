@@ -72,7 +72,7 @@ class DataProcess :
                                 info[name][y] = info[j][y] # 그래서 회사명 기준 이름 항목에다가 해당 년도 데이터 집어넣기
                                 info[name] = dict(sorted(info[name].items())) # 키 기준으로 정렬
                                 info[j].pop(y, None) # 기존 dict에서 년도 지우기
-                            if len(info[j].keys()) <= 3 : # 만약에 해당 회사명 내의 키가 3개 이하(데이터분류, 업종, 업종명 제외 없는 경우) 아예 info 내에서 drop 시키기
+                            if len(info[j].keys()) <= 4 : # 만약에 해당 회사명 내의 키가 4개 이하(데이터분류, 업종, 업종명, 종목코드 제외 없는 경우) 아예 info 내에서 drop 시키기
                                 info.pop(j, None)
             # company_info.json 파일 생성
             with open(self.resource_path('json/company_info.json'), 'w', encoding='UTF-8') as f : json.dump(info, f, indent=4, ensure_ascii=False)

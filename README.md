@@ -45,9 +45,9 @@ pip install pyinstaller
 pip install -U scikit-learn
 ```
 
-### Run
+### Build
 
-프로그램 실행 파일 Build
+프로그램 실행 파일을 Build 합니다.
 ```
 pyinstaller --add-data "calculator.py;data_process.py" --add-data "json/*;json" -w -F project.py
 ```
